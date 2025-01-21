@@ -40,6 +40,10 @@ namespace compare_algorithm
                 int val = Convert.ToInt32(Console.ReadLine());
                 LinearSearch(b, val);
             }
+            else(opt = 2)
+                    {
+
+                    }
 
         }
         
@@ -120,9 +124,9 @@ namespace compare_algorithm
             bool found = false
                 for (int i = 0; i < a.Length; i++)
                 {
-
+      
                 }
         }
-
+   
     }
 }
