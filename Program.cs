@@ -6,45 +6,18 @@ namespace compare_algorithm
     {
         static void Main(string[] args)
         {
-            int[] Numbers = new int[20];
-            Random r = new Random();
-            for (int k = 0; k < Numbers.Length; k++)
-            {
-                Numbers[k] = r.Next(0, 10000000);
-            }
-            int temp;
-            bool swaps = false;
-            int Count = 0;
+            Random n = new Random();
             Stopwatch sw = new Stopwatch();
-            sw.Start();
-            do
-            {
-                swaps = false;
-                for (int j = 0; j < Numbers.Length - 1; j++)
-                {
-                    if (Numbers[j] > Numbers[j + 1])
-                    {
-                        temp = Numbers[j];
-                        Numbers[j] = Numbers[j + 1];
-                        Numbers[j + 1] = temp;
-                        swaps = true;
-                    }
-                    Count++;
-                }
-            } while (swaps);
-            sw.Stop();
-            Console.WriteLine("The array is sorted");
-            Console.WriteLine($"it took {Count} operations to do so");
-            Console.WriteLine($"it took {sw.ElapsedMilliseconds} milliseconds to do so");
-            foreach (int i in Numbers)
-            {
-                Console.WriteLine(i);
-            }
+            Console.WriteLine("Enter an array size");
+            int arraysize = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter a new item size");
+            int itemsize = Convert.ToInt32(Console.ReadLine());
+            int[] thisarray = CreateArray(arraysize, n, itemsize );
         }
-        //static int[] CreateArray(int size, Random r)
-        // {
+        static int[] CreateArray(int size, Random r)
+        {
 
-        //}
+        }
         static void menu()
         {
 
@@ -108,14 +81,15 @@ namespace compare_algorithm
                 Merge(a, low, mid, high);
             }
         }
-        //static bool LinearSearch(int[] a, int numToFind)
-        //{
+        static bool LinearSearch(int[] a, int numToFind)
+        {
+            Random random = new Random();
+            int n = random.Next(0, 1000);
+        }
+        static bool BinarySearch(int[] a, int numToFind)
+        {
 
-        //}
-        //static bool BinarySearch(int[] a, int numToFind)
-        //{
-            
-        //}
-            
+        }
+
     }
 }
