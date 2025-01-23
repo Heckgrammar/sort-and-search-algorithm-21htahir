@@ -6,18 +6,21 @@ namespace compare_algorithm
     {
         static void Main(string[] args)
         {
+            Random n = new Random();
             Stopwatch sw = new Stopwatch();
+            Console.WriteLine("what size would you like your array");
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] ints = CreateArray(size, n);
             menu();
         }
-        static int[] CreateArray(int size, int min, int max)
+        static int[] CreateArray(int size, Random r)
         {
-            Random r = new Random();
-            int[] a = new int[size];
-            for (int i = 0; i < a.Length; ++i)
+            int[] numbers = new int[size];
+            for (int i = 0; i < numbers.Length; ++i)
             {
-                a[i] = r.Next(min, max);
+                numbers[i] = r.Next(1, 10000);
             }
-            return a;
+            return numbers;
         }
         static void menu()
         {
@@ -26,37 +29,19 @@ namespace compare_algorithm
             Console.WriteLine("enter 3 for bubble sort");
             Console.WriteLine("enter 4 for merge sort");
             Console.WriteLine("enter 9 to quit");
-            int opt = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter the size of the array");
-            int size = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter minimum value for the array");
-            int min = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(" enter the maximum value for the array");
-            int max = Convert.ToInt32(Console.ReadLine());
-            int[] b = CreateArray(size, min, max);
-            if (opt == 1)
-            {
-                Console.WriteLine("Enter a value to find");
-                int val = Convert.ToInt32(Console.ReadLine());
-                LinearSearch(b, val);
-            }
-            else(opt = 2)
-                    {
-
-                    }
-
+            Console.WriteLine("Choose a value");
         }
         
-        static void BubbleSort(int[] a)
-        {
-            int temp;
-            bool swaps;
-            do
-            {
+        //static void BubbleSort(int[] a)
+        //{
+        //    int temp;
+        //    bool swaps;
+        //    do
+        //    {
 
-            }
+        //    }
             
-        }
+        //}
         static void Merge(int[] a, int low, int mid, int high)
         {
             int i, j, k;
@@ -113,20 +98,25 @@ namespace compare_algorithm
         }
         static bool LinearSearch(int[] a, int numToFind)
         {
-            bool found = false;
-            for (int i = 0; i < a.Length; ++i)
+            for (int i = 0; i < a.Length; i++)
             {
-
-            }
-        }
-        static bool BinarySearch(int[] a, int numToFind)
-        {
-            bool found = false
-                for (int i = 0; i < a.Length; i++)
+                if (a[i] == numToFind)
                 {
-      
+                    return  true;
+                    Console.WriteLine($"your number was found at index {i}");
                 }
+            }
+            return false;
         }
+        //static bool BinarySearch(int[] a, int numToFind)
+        //{
+        //    bool found = false
+        //    int ub = a.Length - 1;
+
+        //        {
+      
+        //        }
+        //}
    
     }
 }
